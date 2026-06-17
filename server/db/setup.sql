@@ -1,12 +1,11 @@
-USE `lingo_bot`;
+DROP TABLE IF EXISTS `phrases`;
 
 DROP TABLE IF EXISTS `languages`;
 
 DROP TABLE IF EXISTS `settings`;
 
-DROP TABLE IF EXISTS `phrases`;
-
 CREATE TABLE `languages` (`id` SERIAL, `name` VARCHAR(255) NOT NULL);
+
 CREATE TABLE `settings` (`id` SERIAL, `name` VARCHAR(255) NOT NULL);
 
 CREATE TABLE `phrases` (
@@ -26,19 +25,19 @@ CREATE TABLE `phrases` (
 );
 
 
--- Insert into Language table
+-- Insert into Languages table
 INSERT INTO languages (id, name) VALUES
 (1, 'German'),
 (2, 'Spanish'),
 (3, 'French');
 
--- Insert into Setting table
+-- Insert into Settings table
 INSERT INTO settings (id, name) VALUES
 (1, 'Cafe'),
 (2, 'Restaurant'),
 (3, 'Airport');
 
--- Insert into Phrase table (Mixing up languages and settings)
+-- Insert into Phrases table (Mixing up languages and settings)
 INSERT INTO phrases (id, english_text, translated_text, language_id, setting_id, speaker) VALUES
 (1, 'Hello, can I have a coffee?', 'Hola, ¿puedo tomar un café?', 2, 1, 2),
 (2, 'Where is the restroom?', 'Où sont les toilettes?', 3, 2, 2),
@@ -62,12 +61,12 @@ INSERT INTO phrases (id, english_text, translated_text, language_id, setting_id,
 (20, 'Where is the baggage claim?', 'Où est la récupération des bagages?', 3, 3, 2),
 (21, 'Do you have vegetarian options?', 'Haben Sie vegetarische Optionen?', 1, 2, 2),
 (22, 'Can I sit by the window?', '¿Puedo sentarme junto a la ventana?', 2, 1, 2),
-(23, 'Excuse me, I need assistance.', 'Excusez-moi, j’ai besoin d’aide.', 3, 3, 2),
+(23, 'Excuse me, I need assistance.', 'Excusez-moi, j\'ai besoin d\'aide.', 3, 3, 2),
 (24, 'Is this seat taken?', 'Ist dieser Platz besetzt?', 1, 1, 2),
 (25, 'Would you like milk with your coffee?', '¿Quieres leche con tu café?', 2, 1, 1),
 (26, 'How long is the flight delayed?', 'Combien de temps le vol est-il retardé?', 3, 3, 2),
 (27, 'Would you like an extra napkin?', 'Möchten sie eine zusätzliche Serviette?', 1, 2, 1),
 (28, 'Do you have decaf coffee?', '¿Tienen café descafeinado?', 2, 1, 2),
-(29, 'What are today’s specials?', 'Quels sont les plats du jour?', 3, 2, 2),
+(29, 'What are today\'s specials?', 'Quels sont les plats du jour?', 3, 2, 2),
 (30, 'Please go to gate 105', 'Bitte gehen Sie zum Tor 105', 1, 3, 1),
 (31, 'Would you like a coffee?', 'Möchten Sie einen Kaffee?', 1, 2, 1);
