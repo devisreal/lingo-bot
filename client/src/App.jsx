@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
@@ -39,6 +39,7 @@ function App() {
       settingsId
     );
     if (results.length === 0) {
+      console.log('No Phrases')
     }
     setPhrases(results);
     setIsLoading(false);
