@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
-  })
+  }),
 );
 
 app.get("/", (_req, res) => {
